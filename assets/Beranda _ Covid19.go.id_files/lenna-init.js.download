@@ -1,0 +1,20 @@
+// eslint-disable-next-line no-unused-vars
+function LennaWebchatInit(app_id) {
+  var div = document.createElement("div");
+  document.body.appendChild(div);
+  div.id = "lenna-webchat";
+
+  window.lennaInit = {
+    appId: {
+      hashed: app_id
+    }
+  };
+
+  var obj = {
+    appId: {
+      hashed: app_id
+    }
+  };
+
+  localStorage.lenna_initialize = JSON.stringify(obj);
+}

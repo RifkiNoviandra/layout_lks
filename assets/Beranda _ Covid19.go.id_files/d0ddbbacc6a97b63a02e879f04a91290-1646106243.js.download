@@ -1,0 +1,66 @@
+$(function() {
+    $('iframe').each(function(i,e) {
+        if (false === /^https:\/\/(?:www\.)?youtu(?:be(?:-nocookie)?\.com|\.be)\/embed\//.test(e.src)) return;
+        if (/\bwrapper\b/.test(e.parentNode.className)) return;
+        $(e).wrap("<div class='video-wrapper ratio-16-9'></div>");
+    });
+    $('video').each(function(i,e) {
+        if ($(e).closest("div.video-wrapper").length > 0) return;
+        $(e).wrap("<div class='video-wrapper ratio-16-9'></div>");
+    });
+});
+
+$(function() {
+    if ($('body > header ~ *').length - $('body > footer ~ *').length !== 2) return;
+    var el = $('body > header').next();
+    if (el.css('min-height') !== '0px') return;
+
+    var px = 0;
+    $('body > header, body > footer').each(function(i, e) {
+        px += $(e).outerHeight();
+    });
+    el.css('min-height', 'calc(100vh - ' + px + 'px');
+});
+
+$(function() {
+    function gtagEvent(act, cat, label) {
+        try {
+            gtag && gtag('event', act, {
+                event_category: cat,
+                event_label: label
+            });
+        }
+        catch (e) {}
+    }
+
+    var a_tags = jQuery('a');
+    
+    a_tags.filter(function(i, e) {
+        return e.origin !== window.location.origin;
+    }).each(function (i,e) {
+            e.target = '_blank';
+            e.rel = 'nofollow';
+    }).on('click', function(e) {
+        gtagEvent(this.host ? this.host : this.href, 'external_link', this.pathname + this.search + this.hash);
+    });
+
+    a_tags.filter(function(i, e) {
+        return e.origin === window.location.origin && /\.(\w{2,})$/.test(e.pathname);
+    }).on('click', function(e) {
+        gtagEvent(this.host ? this.host : this.href, 'internal_link_download', this.pathname + this.search + this.hash);
+    });
+    
+    jQuery('video, audio').on('play', function(e) {
+        gtagEvent(this.tagName.toLowerCase() + '_' + e.type, 'audio_video', this.currentSrc);
+    });
+});
+
+$(document.body).on('changed.owl.carousel', '.owl-carousel', function(e) {
+    if (window.__C7TIMEOUT__ !== undefined)
+        return;
+    window.__C7TIMEOUT__ = setTimeout(function() {
+        //console.log(e);
+        $(document.body).trigger('scroll');
+        window.__C7TIMEOUT__ = undefined;
+    }, 700);
+});

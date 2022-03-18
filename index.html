@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+    <script src="function.js" defer></script>
+</head>
+<body>
+    <div class="nav_mobile" id="mobile_nav">
+        <ul class="navigation_mobile">
+            <li><a href="#information">Beranda</a></li>
+            <li>Berita</li>
+            <li>Sebaran</li>
+            <li>Peraturan</li>
+            <li>Edukasi</li>
+            <li>Tanya Jawab</li>
+            <li>Info Penting</li>
+        </ul>
+    </div>
+    <div class="navbar">
+        <div class="logo">
+            <img src="images/logo-garuda-big.png" alt="" class="logo_images">
+        </div>
+        <div class="navigation">
+            <ul class="navigation_bar">
+                <li><a href="#information">Beranda</a></li>
+                <li>Berita</li>
+                <li>Sebaran</li>
+                <li>Peraturan</li>
+                <li>Edukasi</li>
+                <li>Tanya Jawab</li>
+                <li>Info Penting</li>
+            </ul>
+            <div class="button_navigation" style="margin-right: 20px">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <button type="button" class="button_hoax">Hoax Buster</button>
+            </div>
+            <div class="navbar_threedots">
+                <input type="checkbox" width="30px" height="20px" onclick="changeCondition(this)">
+                <div class="animation_x"></div>
+                <div class="animation_x"></div>
+                <div class="animation_x"></div>
+            </div>
+        </div>
+    </div>
+    <div class="text_slide">
+        <div class="text_inside"><i>Layanan Info Faskes Vaksinasi</i></div>
+        <div class="text_inside"><i>Aku Pakai Masker Supaya Virus Kalah</i></div>
+        <div class="text_inside"><i>KIPI Atau Reaksi Setelah Vaksinasi</i></div>
+    </div>
+    <div class="hero_slider" id="hero">
+        <div class="slider_row">
+            <div><button class="prev" onclick="indexChange(-1)"> < </button> </div>
+            <div class="image_hero">
+                <img src="images/slider-oct-0-0-0-0-1628845497.webp" alt="" height="100%" width="100%" >
+            </div>
+            <div class="image_hero">
+                <img src="images/faskesvaksin.jpeg" alt="" height="100%" width="100%" >
+            </div>
+            <div class="image_hero">
+                <img src="images/kipi.jpeg" alt="" height="100%" width="100%" >
+            </div>
+            <div><button class="next" onclick="indexChange(1)"> > </button></div>
+        </div>
+        <div class="three_dot">
+            <span class="dot" onclick="nowIndex(1)"></span><span class="dot" onclick="nowIndex(2)"></span><span class="dot" onclick="nowIndex(3)"></span>
+        </div>
+    </div>
+    <div class="information" id="information">
+        <div class="title">
+            <h1>Informasi Penting Untuk Kamu</h1>
+            <div class="information_button">
+                <p>Jangan sampai kamu ketinggalan informasi penting lainnya.</p>
+                <p>Temukan berita terpercaya dan akurat disini</p>
+                <button> Lihat Informasi Lainnya</button>
+            </div>
+        </div>
+
+        <div class="information_card_container">
+            <div class="card">
+                <div class="card_header">
+                    <h3>Vaksinasi Covid-19</h3>
+                </div>
+                <div class="card_body">
+                    <div class="card_image">
+                        <img src="images/thumb_10389_400_240_0_0_crop.jpeg" alt="" width="100%" height="100%">
+                    </div>
+                    <div class="card_content">
+                        <p class="date_information"> 14 mar 2020</p>
+                        <h4>Vaksin Covid-19 Terbukti Melindungi Dari Kema...</h4>
+                        <button class="card_button">Selengkapnya</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_header">
+                    <h3>Vaksinasi Covid-19</h3>
+                </div>
+                <div class="card_body">
+                    <div class="card_image">
+                        <img src="images/thumb_10400_400_240_0_0_crop.jpeg" alt="" width="100%" height="100%">
+                    </div>
+                    <div class="card_content">
+                        <p class="date_information"> 14 mar 2020</p>
+                        <h4>Vaksin Covid-19 Terbukti Melindungi Dari Kema...</h4>
+                        <button class="card_button">Selengkapnya</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_header">
+                    <h3>Vaksinasi Covid-19</h3>
+                </div>
+                <div class="card_body">
+                    <div class="card_image">
+                        <img src="images/thumb_10127_400_240_0_0_crop.jpeg" alt="" width="100%" height="100%">
+                    </div>
+                    <div class="card_content">
+                        <p class="date_information"> 14 mar 2020</p>
+                        <h4>Vaksin Covid-19 Terbukti Melindungi Dari Kema...</h4>
+                        <button class="card_button">Selengkapnya</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="data_sebaran">
+        <h1>Data Sebaran</h1>
+        <div class="sebaran_content">
+            <div class="data">
+                <div class="global">
+                    <div class="title_data">
+                        <h5>Global</h5>
+                    </div>
+                    <div class="update_data">
+                        <p>Update Terakhir: 17 - 03 - 2022 Sumber : WHO</p>
+                    </div>
+                    <div class="data_list global">
+                        <div class="data_container"><p class="top_text">229</p><p class="bottom_text">Negara</p></div>
+                        <div class="data_container"><p class="top_text">229</p><p class="bottom_text">Negara</p></div>
+                        <div class="data_container"><p class="top_text">229</p><p class="bottom_text">Negara</p></div>
+                    </div>
+                </div>
+                <div class="indonesia">
+                    <div class="title_data">
+                        <h5>Global</h5>
+                    </div>
+                    <div class="update_data">
+                        <p>Update Terakhir: 17 - 03 - 2022 Sumber : WHO</p>
+                    </div>
+                    <div class="data_list indonesia">
+                        <div class="data_container"><p class="top_text">229</p><p class="bottom_text">Negara</p></div>
+                        <div class="data_container"><p class="top_text">229</p><p class="bottom_text">Negara</p></div>
+                        <div class="data_container"><p class="top_text">229</p><p class="bottom_text">Negara</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="situation">
+                <h2>Situasi Virus</h2>
+                <h2>Covid-19</h2>
+                <h2>Di Indonesia</h2>
+                <button type="button">Lihat Selengkapnya</button>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

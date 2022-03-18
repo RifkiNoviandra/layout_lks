@@ -1,0 +1,18 @@
+.ig_carousel,
+.ig_tv,
+.ig_video {
+    background-image: url(../themes/porto/assets/img/ig_sprites.png);
+    background-repeat: no-repeat;
+    height: 32px;
+    width: 32px
+}
+.ig_carousel {
+    background-position: 0 0;
+}
+.ig_tv,
+.ig_video {
+    background-position: -34px 0;
+}
+.ig_video {
+    background-position: 0 -34px
+}
