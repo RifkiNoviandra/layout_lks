@@ -5,7 +5,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Info Covid - 19</title>
+    <link rel="icon" href="images/logo_covid-removebg-preview.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
@@ -23,13 +24,17 @@
             <li>Info Penting</li>
         </ul>
     </div>
-    <div class="navbar">
+    <div class="navbar" id="navbar">
         <div class="logo">
-            <img src="images/logo-garuda-big.png" alt="" class="logo_images">
+            <img src="images/logo_covid-removebg-preview.png" alt="" class="logo_images" style="height: 100%">
+            <div class="logo_text">
+                <h4>Info</h4>
+                <h4>Covid&#45;19</h4>
+            </div>
         </div>
         <div class="navigation">
             <ul class="navigation_bar">
-                <li><a href="#information">Beranda</a></li>
+                <li class="active_menu"><a href="#information">Beranda</a></li>
                 <li>Berita</li>
                 <li>Sebaran</li>
                 <li>Peraturan</li>
@@ -56,7 +61,7 @@
     </div>
     <div class="hero_slider" id="hero">
         <div class="slider_row">
-            <div><button class="prev" onclick="indexChange(-1)"> < </button> </div>
+            <div><button class="prev" onclick="indexChange(-1)"><img src="images/arrow.png" alt=""></button> </div>
             <div class="image_hero">
                 <img src="images/slider-oct-0-0-0-0-1628845497.webp" alt="" height="100%" width="100%" >
             </div>
@@ -66,65 +71,73 @@
             <div class="image_hero">
                 <img src="images/kipi.jpeg" alt="" height="100%" width="100%" >
             </div>
-            <div><button class="next" onclick="indexChange(1)"> > </button></div>
+            <div><button class="next" onclick="indexChange(1)"><img src="images/arrow-right.png" alt=""></button></div>
         </div>
         <div class="three_dot">
             <span class="dot" onclick="nowIndex(1)"></span><span class="dot" onclick="nowIndex(2)"></span><span class="dot" onclick="nowIndex(3)"></span>
         </div>
     </div>
-    <div class="information" id="information">
-        <div class="title">
-            <h1>Informasi Penting Untuk Kamu</h1>
-            <div class="information_button">
-                <p>Jangan sampai kamu ketinggalan informasi penting lainnya.</p>
-                <p>Temukan berita terpercaya dan akurat disini</p>
-                <button> Lihat Informasi Lainnya</button>
-            </div>
-        </div>
-
-        <div class="information_card_container">
-            <div class="card">
-                <div class="card_header">
-                    <h3>Vaksinasi Covid-19</h3>
+    <div class="bg" id="information">
+        <div class="information">
+            <div class="title">
+                <div class="div">
+                    <h1>Informasi Penting Untuk Kamu</h1>
+                    <div class="line"></div>
                 </div>
-                <div class="card_body">
-                    <div class="card_image">
-                        <img src="images/thumb_10389_400_240_0_0_crop.jpeg" alt="" width="100%" height="100%">
-                    </div>
-                    <div class="card_content">
-                        <p class="date_information"> 14 mar 2020</p>
-                        <h4>Vaksin Covid-19 Terbukti Melindungi Dari Kema...</h4>
-                        <button class="card_button">Selengkapnya</button>
-                    </div>
+                <div class="information_button">
+                    <p>Jangan sampai kamu ketinggalan informasi penting lainnya.</p>
+                    <p>Temukan berita terpercaya dan akurat disini</p>
+                    <button> Lihat Informasi Lainnya</button>
                 </div>
             </div>
-            <div class="card">
-                <div class="card_header">
-                    <h3>Vaksinasi Covid-19</h3>
-                </div>
-                <div class="card_body">
-                    <div class="card_image">
-                        <img src="images/thumb_10400_400_240_0_0_crop.jpeg" alt="" width="100%" height="100%">
-                    </div>
-                    <div class="card_content">
-                        <p class="date_information"> 14 mar 2020</p>
-                        <h4>Vaksin Covid-19 Terbukti Melindungi Dari Kema...</h4>
-                        <button class="card_button">Selengkapnya</button>
-                    </div>
-                </div>
+            <div class="search">
+                <input type="text" placeholder="Search Information Here..." class="search_information" id="search">
+                <button type="button" class="search_btn" onclick="searchFilter()">Search</button>
             </div>
-            <div class="card">
-                <div class="card_header">
-                    <h3>Vaksinasi Covid-19</h3>
-                </div>
-                <div class="card_body">
-                    <div class="card_image">
-                        <img src="images/thumb_10127_400_240_0_0_crop.jpeg" alt="" width="100%" height="100%">
+            <div class="information_card_container">
+                <div class="card">
+                    <div class="card_header">
+                        <h3>Vaksinasi Covid-19</h3>
                     </div>
-                    <div class="card_content">
-                        <p class="date_information"> 14 mar 2020</p>
-                        <h4>Vaksin Covid-19 Terbukti Melindungi Dari Kema...</h4>
-                        <button class="card_button">Selengkapnya</button>
+                    <div class="card_body">
+                        <div class="card_image">
+                            <img src="images/thumb_10389_400_240_0_0_crop.jpeg" alt="" width="100%" height="100%">
+                        </div>
+                        <div class="card_content">
+                            <p class="date_information"> 14 mar 2020</p>
+                            <h4>Vaksin Covid-19 Terbukti Melindungi Dari Kema...</h4>
+                            <button class="card_button">Selengkapnya</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card_header">
+                        <h3>Vaksinasi Covid-19</h3>
+                    </div>
+                    <div class="card_body">
+                        <div class="card_image">
+                            <img src="images/thumb_10400_400_240_0_0_crop.jpeg" alt="" width="100%" height="100%">
+                        </div>
+                        <div class="card_content">
+                            <p class="date_information"> 14 mar 2020</p>
+                            <h4>Ini H2</h4>
+                            <button class="card_button">Selengkapnya</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card_header">
+                        <h3>Vaksinasi Covid-19</h3>
+                    </div>
+                    <div class="card_body">
+                        <div class="card_image">
+                            <img src="images/thumb_10127_400_240_0_0_crop.jpeg" alt="" width="100%" height="100%">
+                        </div>
+                        <div class="card_content">
+                            <p class="date_information"> 14 mar 2020</p>
+                            <h4>Vaksin Covid-19 Terbukti Melindungi Dari Kema...</h4>
+                            <button class="card_button">Selengkapnya</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -170,7 +183,68 @@
             </div>
         </div>
     </div>
+    <div class="must_know_box">
+        <h1>Harus Tau</h1>
+        <h5>Informasi Penting Agar Terhindar Dari Berita Hoax</h5>
+        <div class="must_know_content">
+            <div class="must_know_container">
+                <h3>Peraturan</h3>
+                <p>Intruksi Menteri Dalam Negeri Nomor 17 Tahun 2017</p>
+                <p>Intruksi Menteri Dalam Negeri Nomor 17 Tahun 2017</p>
+                <p>Intruksi Menteri Dalam Negeri Nomor 17 Tahun 2017</p>
+                <p>Intruksi Menteri Dalam Negeri Nomor 17 Tahun 2017</p>
+            </div>
+            <div class="must_know_container">
+                <h3>Tanya Jawab</h3>
+                <p>Intruksi Menteri Dalam Negeri Nomor 17 Tahun 2017</p>
+                <p>Intruksi Menteri Dalam Negeri Nomor 17 Tahun 2017</p>
+                <p>Intruksi Menteri Dalam Negeri Nomor 17 Tahun 2017</p>
+                <p>Intruksi Menteri Dalam Negeri Nomor 17 Tahun 2017</p>
+            </div>
+            <div class="must_know_container">
+                <h3>Hoax Buster</h3>
+                <p><span class="hoax_danger">[Salah]</span> Menteri Dalam Negeri Nomor 17 Tahun 2017</p>
+                <p>Intruksi Menteri Dalam Negeri Nomor 17 Tahun 2017</p>
+                <p>Intruksi Menteri Dalam Negeri Nomor 17 Tahun 2017</p>
+                <p>Intruksi Menteri Dalam Negeri Nomor 17 Tahun 2017</p>
+            </div>
+        </div>
+    </div>
+    <div class="must_know_box row">
+        <div class="btn_container-25">
+            <a href="" class="btn_must_know">Cari lokasi Vaksin Disini</a>
+        </div>
+        <div class="btn_container-25">
+            <a href="" class="btn_must_know">Cari lokasi Vaksin Disini</a>
+        </div>
+        <div class="btn_container-50">
+            <a href="" class="btn_must_know">Cari lokasi Vaksin Disini</a>
+        </div>
+    </div>
 
-
+<footer class="footer">
+    <div class="footer_menu">
+        <ul>
+            <li><a href="">Beranda</a></li>
+            <li><a href="">Edukasi</a></li>
+            <li><a href="">Tanya Jawab</a></li>
+            <li><a href="">Hoax Buster</a></li>
+        </ul>
+    </div>
+    <h2>119</h2>
+    <h5>Covid-19 Hotline</h5>
+    <button type="button" class="notification">Dapatkan Notifikasi</button>
+    <p>Untuk tetap update info terkini</p>
+    <div class="socmed">
+        Social Media Section
+    </div>
+</footer>
+<footer  class="footer copyright">
+    <p>Satuan Tugas Penanganan COVID-19 - © Copyright 2021. All Rights Reserved.</p>
+</footer>
+    <div class="float-btn">
+        <button type="button" class="float_btn-left"><img src="images/1642397208.png" alt="" width="100%" height="100%" style="object-fit: cover"></button>
+        <a href="#" class="float_btn-right"> Back To Top </a>
+    </div>
 </body>
 </html>

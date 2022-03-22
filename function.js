@@ -1,19 +1,54 @@
+
+window.onscroll = function (){
+    scrollFunction()
+}
+
+var navbar = document.getElementById('navbar')
+var sticky = navbar.offsetTop
+
+function scrollFunction(){
+    if (window.pageYOffset > sticky){
+        console.log(2);
+        navbar.classList.add("sticky")
+    }else{
+        console.log(1);
+        navbar.classList.remove("sticky")
+    }
+}
+
 var nav = document.getElementsByClassName('navbar_threedots')
 var navigation_bar = document.getElementById('mobile_nav')
 var div = document.getElementsByClassName('animation_x')
+
+window.addEventListener('resize' , function (e){
+    if (window.innerWidth > 768){
+        console.log(1);
+        if (navigation_bar.classList.value.includes('active')){
+            navigation_bar.style.display = 'none'
+        }
+    }else{
+        if (!navigation_bar.classList.value.includes('active')){
+            console.log(navigation_bar.classList);
+        }else{
+            console.log(2);
+            navigation_bar.style.display = 'block'
+        }
+    }
+})
+
 function changeCondition(data){
+    navigation_bar.style.display = ''
+    navigation_bar.classList.toggle('active');
     if (data.checked){
-        navigation_bar.style.display = 'block'
+        // navigation_bar.style.display = 'block'
         div[0].style.transform = 'rotateZ(45deg) translateY(3px) translateX(4px)'
         div[1].style.display = 'none'
         div[2].style.transform = 'rotateZ(-45deg) translateY(-3px) translateX(4px)'
-        console.log(1);
     }else {
-        navigation_bar.style.display = 'none'
+        // navigation_bar.style.display = 'none'
         div[0].style.transform = 'none'
         div[1].style.display = 'block'
         div[2].style.transform = 'none'
-        console.log(2);
     }
 }
 
@@ -87,4 +122,18 @@ function slide_images(n){
 
     images_slide[imgIndex - 1].style.display = 'block'
     dot[imgIndex-1].className += ' active_dot'
+}
+
+function searchFilter(){
+    let input = document.getElementById("search")
+    const cards = document.querySelectorAll(".card")
+    cards.forEach(item => {
+        let search = item.querySelector("h4")
+        if (search.innerText.toLowerCase().indexOf(input.value.toLowerCase()) > -1) {
+            item.style.display = ""
+        }else{
+            item.style.display = "none"
+
+        }
+    });
 }
